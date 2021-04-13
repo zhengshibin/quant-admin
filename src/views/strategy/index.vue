@@ -103,10 +103,10 @@
       <el-tab-pane label="因子一" name="second">
         <el-form ref="setting1" :model="setting1" label-width="120px">
           <el-form-item label="买入:">
-            <el-tag type="success">购买订单20位</el-tag>
+            <el-tag type="warning">购买订单20位</el-tag>
             <el-row class="grid-content">
               <el-col>
-                <el-tag>产生超过N价格 :</el-tag>
+                <el-tag>产生低于USDT价格 :</el-tag>
                 <el-input-number
                   style="margin-left:8px"
                   v-model="setting1.buyOrdersUsdt"
@@ -115,6 +115,7 @@
                   :min="0"
                   :max="1000000"
                 ></el-input-number>
+                <el-tag type="success" class="left">买操作</el-tag>
               </el-col>
             </el-row>
             <el-form-item label="买入权重:">
@@ -151,7 +152,7 @@
           <el-form-item label="买入:">
             <el-row class="grid-content">
               <el-col>
-                <el-tag>最新单笔购买订单的USDT价格大于:</el-tag>
+                <el-tag>最新单笔购买订单的USDT价格小于:</el-tag>
 
                 <el-input-number
                   v-model="setting2.buyOrderUsdt"
@@ -407,7 +408,7 @@
         </el-form>
       </el-tab-pane>
       <!-- <el-tab-pane :label="title" name="last">
-      
+
       </el-tab-pane>-->
 
       <el-tab-pane label="止盈止损" name="six">
